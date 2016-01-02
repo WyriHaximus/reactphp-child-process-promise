@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "313fdccb796456f415d46e4611ffbab0",
-    "content-hash": "dc77424105943a6ec244406da502d193",
+    "hash": "ea709d5581db4054bf1372244a180c0c",
+    "content-hash": "5c86164740ec44c6d6262a71e3e82e09",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -331,16 +331,16 @@
         },
         {
             "name": "phake/phake",
-            "version": "v2.2.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlively/Phake.git",
-                "reference": "9c3c287ef3f23d5ca438917ab1a4f8c47b654b4b"
+                "reference": "20d76de0ec09f219d548752847835c256526d22d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlively/Phake/zipball/9c3c287ef3f23d5ca438917ab1a4f8c47b654b4b",
-                "reference": "9c3c287ef3f23d5ca438917ab1a4f8c47b654b4b",
+                "url": "https://api.github.com/repos/mlively/Phake/zipball/20d76de0ec09f219d548752847835c256526d22d",
+                "reference": "20d76de0ec09f219d548752847835c256526d22d",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +348,6 @@
                 "sebastian/comparator": "~1.1"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
                 "doctrine/common": "2.3.*",
                 "ext-soap": "*",
                 "hamcrest/hamcrest-php": "1.1.*",
@@ -359,11 +358,6 @@
                 "hamcrest/hamcrest-php": "Use Hamcrest matchers."
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.0-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Phake": "src/"
@@ -385,7 +379,7 @@
                 "mock",
                 "testing"
             ],
-            "time": "2015-11-30 17:02:04"
+            "time": "2015-05-09 13:58:15"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1238,7 +1232,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
-    "prefer-lowest": false,
+    "prefer-lowest": true,
     "platform": {
         "php": "^5.4||^7.0"
     },
