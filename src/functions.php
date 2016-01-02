@@ -12,7 +12,7 @@ use React\Promise\Deferred;
  * @param LoopInterface $loop    ReactPHP event loop.
  * @param Process       $process Child Process to run.
  *
- * @return \React\Promise\Promise
+ * @return \React\Promise\PromiseInterface
  */
 function childProcessPromise(LoopInterface $loop, Process $process)
 {
