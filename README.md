@@ -22,14 +22,14 @@ composer require wyrihaximus/react-child-process-promise
 \WyriHaximus\React\childProcessPromise($loop, new Process('uptime'))->then(function ($result) {
     var_export($result);
     /**
-      Example output: 
-      [
-        'buffers' => [
-          'stderr' => 'Error messages will go in this buffer',
-          'stdout' => 'Normal output will go in this buffer',
-        ],
-        'exitCode' => 0,
-      ]
+     * Example output: 
+     * [
+     *   'buffers' => [
+     *     'stderr' => 'Error messages will go in this buffer',
+     *     'stdout' => 'Normal output will go in this buffer',
+     *   ],
+     *   'exitCode' => 0,
+     * ]
     */
 });
 ```
