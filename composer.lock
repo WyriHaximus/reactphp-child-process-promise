@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ea709d5581db4054bf1372244a180c0c",
-    "content-hash": "5c86164740ec44c6d6262a71e3e82e09",
+    "hash": "f27f7935ea0b60c6b72502a989cc342b",
+    "content-hash": "460bf48d0333559a7e739226b2db5b33",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -231,16 +231,16 @@
         },
         {
             "name": "wyrihaximus/ticking-promise",
-            "version": "1.5.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/TickingPromise.git",
-                "reference": "d7b1d16942bdf2199c5a712205716851683fbb6e"
+                "reference": "0d09cf2b39b3463f611dcef0ac6b08961319acac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/TickingPromise/zipball/d7b1d16942bdf2199c5a712205716851683fbb6e",
-                "reference": "d7b1d16942bdf2199c5a712205716851683fbb6e",
+                "url": "https://api.github.com/repos/WyriHaximus/TickingPromise/zipball/0d09cf2b39b3463f611dcef0ac6b08961319acac",
+                "reference": "0d09cf2b39b3463f611dcef0ac6b08961319acac",
                 "shasum": ""
             },
             "require": {
@@ -248,8 +248,10 @@
                 "react/promise": "~2.1"
             },
             "require-dev": {
+                "object-calisthenics/phpcs-calisthenics-rules": "^1.0",
                 "phpunit/phpunit": "~4.4",
-                "squizlabs/php_codesniffer": "^1.5.6",
+                "satooshi/php-coveralls": "^0.6",
+                "squizlabs/php_codesniffer": "^1.0",
                 "vectorface/dunit": "~1.4"
             },
             "type": "library",
@@ -273,7 +275,7 @@
                 }
             ],
             "description": "Wrapping ticks into a promise",
-            "time": "2015-10-03 22:55:34"
+            "time": "2015-01-29 08:13:17"
         }
     ],
     "packages-dev": [
