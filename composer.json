@@ -25,6 +25,6 @@
         "psr-4": {
             "WyriHaximus\\React\\": "src/"
         },
-        "files": ["src/functions.php"]
+        "files": ["src/functions_include.php"]
     }
 }
