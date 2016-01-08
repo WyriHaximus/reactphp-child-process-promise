@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ba0c370a89154a162622093c6577b2d0",
-    "content-hash": "460bf48d0333559a7e739226b2db5b33",
+    "hash": "ef1891351f10c7ba80a9325436cc4cfc",
+    "content-hash": "009c80e6ea770c9f13c73c71ca6ec9f7",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -231,16 +231,16 @@
         },
         {
             "name": "wyrihaximus/ticking-promise",
-            "version": "1.4.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/TickingPromise.git",
-                "reference": "0d09cf2b39b3463f611dcef0ac6b08961319acac"
+                "reference": "199d323cbeda8b748bfbda4cfd93aa5f909e2e0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/TickingPromise/zipball/0d09cf2b39b3463f611dcef0ac6b08961319acac",
-                "reference": "0d09cf2b39b3463f611dcef0ac6b08961319acac",
+                "url": "https://api.github.com/repos/WyriHaximus/TickingPromise/zipball/199d323cbeda8b748bfbda4cfd93aa5f909e2e0d",
+                "reference": "199d323cbeda8b748bfbda4cfd93aa5f909e2e0d",
                 "shasum": ""
             },
             "require": {
@@ -248,10 +248,8 @@
                 "react/promise": "~2.1"
             },
             "require-dev": {
-                "object-calisthenics/phpcs-calisthenics-rules": "^1.0",
                 "phpunit/phpunit": "~4.4",
-                "satooshi/php-coveralls": "^0.6",
-                "squizlabs/php_codesniffer": "^1.0",
+                "squizlabs/php_codesniffer": "^1.5.6",
                 "vectorface/dunit": "~1.4"
             },
             "type": "library",
@@ -260,7 +258,7 @@
                     "WyriHaximus\\React\\": "src/"
                 },
                 "files": [
-                    "src/functions.php"
+                    "src/functions_include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -275,7 +273,7 @@
                 }
             ],
             "description": "Wrapping ticks into a promise",
-            "time": "2015-01-29 08:13:17"
+            "time": "2016-01-08 23:15:32"
         }
     ],
     "packages-dev": [
