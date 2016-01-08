@@ -5,6 +5,7 @@ namespace WyriHaximus\React\Tests;
 use Evenement\EventEmitter;
 use Phake;
 use React\EventLoop\Factory;
+use WyriHaximus\React\ProcessOutcome;
 
 class FunctionsTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,13 +27,10 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
 
         $called = false;
         \WyriHaximus\React\childProcessPromise($loop, $process)->then(function ($result) use (&$called) {
-            $this->assertEquals([
-                'buffers' => [
-                    'stderr' => 'abc',
-                    'stdout' => 'def',
-                ],
-                'exitCode' => 123,
-            ], $result);
+            $this->assertEquals(new ProcessOutcome(123, 'abc', 'def'), $result);
+            $this->assertSame(123, $result->getExitCode());
+            $this->assertSame('abc', $result->getStderr());
+            $this->assertSame('def', $result->getStdout());
             $called = true;
         });
         $loop->run();

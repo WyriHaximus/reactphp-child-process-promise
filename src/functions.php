@@ -23,10 +23,7 @@ function childProcessPromise(LoopInterface $loop, Process $process)
     ];
 
     $process->on('exit', function ($exitCode) use ($deferred, &$buffers) {
-        $deferred->resolve([
-            'buffers' => $buffers,
-            'exitCode' => $exitCode,
-        ]);
+        $deferred->resolve(new ProcessOutcome($exitCode, $buffers['stderr'], $buffers['stdout']));
     });
 
     \WyriHaximus\React\futurePromise($loop, $process)->then(function (Process $process) use ($loop, &$buffers) {
