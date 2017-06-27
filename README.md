@@ -23,13 +23,11 @@ composer require wyrihaximus/react-child-process-promise
     var_export($result);
     /**
      * Example output: 
-     * [
-     *   'buffers' => [
-     *     'stderr' => 'Error messages will go in this buffer',
-     *     'stdout' => 'Normal output will go in this buffer',
-     *   ],
+     * WyriHaximus\React\ProcessOutcome::__set_state(array(
      *   'exitCode' => 0,
-     * ]
+     *   'stderr' => 'Error messages will go in this buffer',
+     *   'stdout' => 'Normal output will go in this buffer',
+     * ))
     */
 });
 ```
