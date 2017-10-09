@@ -26,5 +26,11 @@
             "WyriHaximus\\React\\": "src/"
         },
         "files": ["src/functions_include.php"]
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "5.4"
+        }
     }
 }
