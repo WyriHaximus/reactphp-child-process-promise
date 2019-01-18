@@ -1,5 +1,6 @@
 all: cs dunit unit
-travis: cs unit-travis
+ci: cs unit-travis
+ci-extended: cs unit-travis
 contrib: cs dunit unit
 
 init:
