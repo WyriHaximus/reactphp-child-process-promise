@@ -130,5 +130,5 @@ script:
 
 ## Run examples after tests and gather coverage and set it to coverage servers
 after_script:
-  - php examples/uptime.php
+  - if [ "${TRAVIS_OS_NAME}" != "windows"  ]; then php examples/uptime.php; fi;
   - if [ "$qaExtended" = "true" ]; then make ci-coverage; fi;
