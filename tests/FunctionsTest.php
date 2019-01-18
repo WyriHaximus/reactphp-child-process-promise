@@ -15,8 +15,8 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
         $process = Phake::partialMock('React\ChildProcess\Process', [
             'uptime',
         ]);
-        $process->stderr = new EventEmitter();
-        $process->stdout = new EventEmitter();
+        $process->stderr = new ReadableStreamStub();
+        $process->stdout = new ReadableStreamStub();
         Phake::when($process)->start($loop)->thenReturnCallback(function () use ($process, $loop) {
             \WyriHaximus\React\futurePromise($loop, $process)->then(function ($process) {
                 $process->stderr->emit('data', ['abc']);
@@ -26,8 +26,8 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
         });
 
         $called = false;
-        \WyriHaximus\React\childProcessPromise($loop, $process)->then(function ($result) use (&$called) {
-            $this->assertEquals(new ProcessOutcome(123, 'abc', 'def'), $result);
+        \WyriHaximus\React\childProcessPromise($loop, $process)->done(function ($result) use (&$called) {
+            //$this->assertEquals(new ProcessOutcome(123, 'abc', 'def'), $result);
             $this->assertSame(123, $result->getExitCode());
             $this->assertSame('abc', $result->getStderr());
             $this->assertSame('def', $result->getStdout());

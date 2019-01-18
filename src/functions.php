@@ -5,6 +5,7 @@ namespace WyriHaximus\React;
 use React\ChildProcess\Process;
 use React\EventLoop\LoopInterface;
 use React\Promise\Deferred;
+use React\Stream\ReadableStreamInterface;
 
 /**
  * Promise that resolves once child process exits
@@ -28,12 +29,16 @@ function childProcessPromise(LoopInterface $loop, Process $process)
 
     \WyriHaximus\React\futurePromise($loop, $process)->then(function (Process $process) use ($loop, &$buffers) {
         $process->start($loop);
-        $process->stderr->on('data', function ($output) use (&$buffers) {
-            $buffers['stderr'] .= $output;
-        });
-        $process->stdout->on('data', function ($output) use (&$buffers) {
-            $buffers['stdout'] .= $output;
-        });
+        if ($process->stderr instanceof ReadableStreamInterface) {
+            $process->stderr->on('data', function ($output) use (&$buffers) {
+                $buffers['stderr'] .= $output;
+            });
+        }
+        if ($process->stdout instanceof ReadableStreamInterface) {
+            $process->stdout->on('data', function ($output) use (&$buffers) {
+                $buffers['stdout'] .= $output;
+            });
+        }
     });
 
     return $deferred->promise();
