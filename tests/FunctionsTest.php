@@ -2,8 +2,7 @@
 
 namespace WyriHaximus\React\Tests;
 
-use Evenement\EventEmitter;
-use Phake;
+use Prophecy\Argument;
 use React\EventLoop\Factory;
 use WyriHaximus\React\ProcessOutcome;
 
@@ -12,24 +11,24 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
     public function testChildProcessPromise()
     {
         $loop = Factory::create();
-        $process = Phake::partialMock('React\ChildProcess\Process', [
-            'uptime',
-            null,
-            null,
-            []
-        ]);
+        $process = $this->prophesize('React\ChildProcess\Process');
         $process->stderr = new ReadableStreamStub();
         $process->stdout = new ReadableStreamStub();
-        Phake::when($process)->start($loop)->thenReturnCallback(function () use ($process, $loop) {
-            \WyriHaximus\React\futurePromise($loop, $process)->then(function ($process) {
-                $process->stderr->emit('data', ['abc']);
-                $process->stdout->emit('data', ['def']);
-                $process->emit('exit', [123]);
-            });
+        $process->start($loop)->shouldBeCalled();
+        /** @var callable $callback */
+        $callback = null;
+        $process->on('exit', Argument::that(function (callable $cb) use (&$callback) {
+            $callback = $cb;
+            return true;
+        }))->shouldBeCalled();
+        \WyriHaximus\React\timedPromise($loop, 1, $process)->then(function ($process) use (&$callback) {
+            $process->stderr->emit('data', ['abc']);
+            $process->stdout->emit('data', ['def']);
+            $process->emit('exit', [123]);
+            $callback(123);
         });
-
         $called = false;
-        \WyriHaximus\React\childProcessPromise($loop, $process)->done(function ($result) use (&$called) {
+        \WyriHaximus\React\childProcessPromise($loop, $process->reveal())->done(function ($result) use (&$called) {
             $this->assertEquals(new ProcessOutcome(123, 'abc', 'def'), $result);
             $this->assertSame(123, $result->getExitCode());
             $this->assertSame('abc', $result->getStderr());
