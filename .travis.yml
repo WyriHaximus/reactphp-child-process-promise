@@ -130,6 +130,5 @@ script:
 
 ## Run examples after tests and gather coverage and set it to coverage servers
 after_script:
-  - php examples/sync.php
-  - php examples/async.php
+  - php examples/uptime.php
   - if [ "$qaExtended" = "true" ]; then make ci-coverage; fi;
