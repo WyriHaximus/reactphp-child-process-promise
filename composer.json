@@ -10,14 +10,15 @@
         }
     ],
     "require": {
-        "php": "^5.4|^7.0|^8.0",
+        "php": "^5.4||^8.0",
         "react/child-process": "^0.6 || ^0.5 || ^0.4",
         "react/promise": "^2.7",
-        "wyrihaximus/ticking-promise": "^1.5.2"
+        "wyrihaximus/ticking-promise": "^1.5.2|^2.0"
     },
     "require-dev": {
         "vectorface/dunit": "^2.0",
-        "phpunit/phpunit": "^4.4||^9.0",
+        "phpunit/phpunit": "^4.8.36||^9.0",
+        "sebastian/comparator": "^1.2.4||^4.0",
         "squizlabs/php_codesniffer": "^3.3.2"
     },
     "autoload": {
