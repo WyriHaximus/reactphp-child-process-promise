@@ -3,8 +3,9 @@
 namespace WyriHaximus\React\Tests;
 
 use WyriHaximus\React\ProcessOutcome;
+use PHPUnit\Framework\TestCase;
 
-class ProcessOutcomeTest extends \PHPUnit_Framework_TestCase
+class ProcessOutcomeTest extends TestCase
 {
     public function testBasic()
     {

@@ -5,8 +5,9 @@ namespace WyriHaximus\React\Tests;
 use Prophecy\Argument;
 use React\EventLoop\Factory;
 use WyriHaximus\React\ProcessOutcome;
+use PHPUnit\Framework\TestCase;
 
-class FunctionsTest extends \PHPUnit_Framework_TestCase
+class FunctionsTest extends TestCase
 {
     public function testChildProcessPromise()
     {
