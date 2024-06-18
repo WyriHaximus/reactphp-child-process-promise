@@ -13,7 +13,7 @@
         "php": "^7.0|^8.0",
         "react/child-process": "^0.6 || ^0.5 || ^0.4",
         "react/promise": "^2.7",
-        "wyrihaximus/ticking-promise": "^1.5.2|^2.0"
+        "wyrihaximus/ticking-promise": "^1.5.2|^2.0|^3.0"
     },
     "require-dev": {
         "vectorface/dunit": "^2.0",
